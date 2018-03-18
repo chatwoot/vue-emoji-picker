@@ -1,0 +1,8 @@
+{
+  "name": "@chatwoot/vue-emoji-picker",
+  "moduleName": "ChatwootVueEmojiPicker",
+  "input": [
+    "src/components/*"
+  ],
+  "format": ["cjs", "umd-min", "es"]
+}
