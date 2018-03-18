@@ -2,20 +2,20 @@
 @import 'mixin';
 
 .emoji--top-right {
-  &:after {
-    position: relative;
-    left: 8px;
-    @include arrow('bottom', $color-white, 24px);
+  &:before {
+    position: absolute;
+    left: $space-normal;
+    top: -$space-normal;
+    @include arrow('top', $light-gray, $space-normal);
   }
 }
 
-
 .emoji-dialog-header {
-  padding: 0 16px;
+  padding: $zero $space-normal;
   background-color: $light-gray;
-  border-top-left-radius: 16px;
-  border-top-right-radius: 16px;
-  margin: 0;
+  border-top-left-radius: $space-normal;
+  border-top-right-radius: $space-normal;
+  margin: $zero;
   list-style: none;
   text-align: center;
 
@@ -23,22 +23,14 @@
     display: inline-block;
     box-sizing: border-box;
     text-align: center;
-    padding: 8px;
+    padding: $space-medium;
     cursor: pointer;
 
-    img, svg {
-      -webkit-filter: grayscale(100%);
-      filter: grayscale(100%);
-    }
-
     &.active {
-      background: #fff;
-      
-      img,
-      svg {
-        -webkit-filter: grayscale(0);
-        filter: grayscale(0);
-      }
+      background: $color-white;
+      border-top-left-radius: $space-small;
+      border-top-right-radius: $space-small;
+      padding-top: $space-small;
     }
   }
 }
@@ -47,39 +39,45 @@
   height: 248px;
   background: $color-white;
   @include elegant-card;
-
+  position: absolute;
+  left: $space-small;
+  top: 56px;
+    
 
   .emojione {
     margin: $zero;
-    font-size: 16px;
+    font-size: $space-normal;
   }
 
   .emoji-row {
     box-sizing: border-box;
     overflow-y: scroll;
     height: 200px;
-    padding: $space-small;
+    padding: $space-medium;
 
     .emoji {
       display: inline-block;
-      padding: 5px;
-      border-radius: 4px;
+      padding: $space-small;
+      border-radius: $space-small;
     }
 
     .emojione{
-      margin: 8px;
+      margin: $space-medium;
       float:left;
       cursor: pointer;
+      &:hover {
+        opacity: 0.4;
+      }
     }
 
   }
 
   .emoji-category-title {
     font-size: 14px;
-    font-weight: $font-weight-medium;
-    color: $color-heading;
+    font-weight: 500;
+    text-indent: $space-small;
     text-transform: capitalize;
-    margin: 0;
+    margin: $zero;
     font-family: $font-family;
   }
   .emoji-category-heading-decoration {
@@ -95,5 +93,5 @@
 
 .emoji-dialog .emoji-row
 .emoji-dialog .emoji-row .emoji:hover {
-  background: #F5F7F9;
+  background: #eaeaea;
 }

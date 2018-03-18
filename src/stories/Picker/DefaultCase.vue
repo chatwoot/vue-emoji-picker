@@ -1,6 +1,6 @@
 <template>
   <div>
-    <vue-emoji-picker on-click="clicked"/>
+    <vue-emoji-picker :on-click="clicked"/>
   </div>
 </template>
 
